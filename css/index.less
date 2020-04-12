@@ -37,7 +37,7 @@ body {
   }
   .mainbox {
     display: flex;
-    min-width: 1024px;
+    min-width: 320px;
     max-width: 1920px;
     padding: 0.125rem 0.125rem 0;
     height: 300px;
@@ -115,6 +115,7 @@ body {
         background-color: #fff;
       }
     }
+    //   数字模块
     .no {
       background: rgba(101, 132, 226, 0.1);
       padding: 0.1875rem;
@@ -166,22 +167,105 @@ body {
       .no-bd {
         ul {
           display: flex;
-          li{
-              flex: 1;
-              color: rgba(255, 255, 255, 0.7);
-              text-align: center;
-              font-size: 18px;
-              height: .5rem;
-              padding-top: .1rem;
-              line-height: .5rem ;
+          li {
+            flex: 1;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            font-size: 18px;
+            height: 0.5rem;
+            padding-top: 0.1rem;
+            line-height: 0.5rem;
           }
         }
       }
     }
-    .map{
-        height: 10.125rem;
+    // 地图模块
+    .map {
+      position: relative;
+      height: 10.125rem;
+      .map1 {
+        width: 6.475rem;
+        height: 6.475rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: url(../images/map.png);
+        background-size: 100% 100%;
+        opacity: 0.3;
+      }
+      .map2 {
+        position: absolute;
+        width: 8.0375rem;
+        height: 8.0375rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        background: url(../images/lbx.png);
+        animation: rotate 15s linear infinite;
+        z-index: 2;
+        background-size: 100% 100%;
+        opacity: 0.6;
+      }
+      .map3 {
+        position: absolute;
+        width: 7.075rem;
+        height: 7.075rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        background: url(../images/jt.png);
+        animation: rotate1 10s linear infinite;
+        z-index: 3;
+        background-size: 100% 100%;
+        opacity: 0.6;
+      }
+      .chart {
+        position: absolute;
+        top: 0;
+        left: 0;
         background-color: pink;
+        width: 100%;
+        height: 10.125rem;
+      }
     }
   }
-  //   数字模块
+  //   动画
+  @keyframes rotate {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+  @keyframes rotate1 {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(-360deg);
+    }
+  }
 }
+// resize 根元素字体大小改变
+// @media screen and (max-width: 320px) {
+//     html {
+//       font-size: 12px !important;
+//     }
+//   }
+//   @media screen and (max-width: 640px) {
+//     html {
+//       font-size: 24px !important;
+//     }
+//   }
+//   @media screen and (max-width: 1024px) {
+//     html {
+//       font-size: 42px !important;
+//     }
+//   }
+//   @media screen and (min-width: 1920) {
+//     html {
+//       font-size: 80px !important;
+//     }
+//   }
