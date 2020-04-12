@@ -4,9 +4,17 @@
   margin: 0;
   box-sizing: border-box;
 }
+/* 声明字体*/
+@font-face {
+  font-family: electronicFont;
+  src: url(../font/DS-DIGIT.TTF);
+}
 body {
   background: url(../images/bg.jpg) no-repeat top center;
   line-height: 1.15;
+  li {
+    list-style: none;
+  }
   header {
     height: 1.25rem;
     background: url(../images/head_bg.png) no-repeat;
@@ -38,7 +46,7 @@ body {
       flex: 3;
       &:nth-child(2) {
         flex: 5;
-        margin:0 .125rem .1875rem;
+        margin: 0 0.125rem 0.1875rem;
       }
     }
     .panel {
@@ -97,21 +105,83 @@ body {
       h2 {
         height: 0.6rem;
         color: #fff;
-        line-height: .6rem;
-        font-size: .25rem;
+        line-height: 0.6rem;
+        font-size: 0.25rem;
         font-weight: 400;
         text-align: center;
       }
-      .chart{
-          height: 3rem;
-          background-color: #fff;
+      .chart {
+        height: 3rem;
+        background-color: #fff;
       }
     }
-    .no{
-        background:rgba(101, 132, 226, .1);
-        padding: .1875rem;
+    .no {
+      background: rgba(101, 132, 226, 0.1);
+      padding: 0.1875rem;
+      .no-hd {
+        border: 1px solid rgba(25, 186, 139, 0.17);
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 10px;
+          width: 30px;
+          border-left: 2px solid #02a6b5;
+          border-top: 2px solid #02a6b5;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          height: 10px;
+          width: 30px;
+          border-right: 2px solid #02a6b5;
+          border-bottom: 2px solid #02a6b5;
+        }
+        ul {
+          display: flex;
+          li {
+            position: relative;
+            flex: 1;
+            font-size: 0.875rem;
+            line-height: 1rem;
+            color: #ffeb7b;
+            text-align: center;
+            font-family: electronicFont;
+          }
+          .li1::after {
+            content: "";
+            position: absolute;
+            top: 25%;
+            right: 0;
+            width: 1px;
+            height: 50%;
+            background: rgba(255, 255, 255, 0.2);
+          }
+        }
+      }
+      .no-bd {
+        ul {
+          display: flex;
+          li{
+              flex: 1;
+              color: rgba(255, 255, 255, 0.7);
+              text-align: center;
+              font-size: 18px;
+              height: .5rem;
+              padding-top: .1rem;
+              line-height: .5rem ;
+          }
+        }
+      }
+    }
+    .map{
+        height: 10.125rem;
+        background-color: pink;
     }
   }
-//   数字模块
-
+  //   数字模块
 }

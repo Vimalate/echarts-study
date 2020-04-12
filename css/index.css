@@ -3,9 +3,17 @@
   margin: 0;
   box-sizing: border-box;
 }
+/* 声明字体*/
+@font-face {
+  font-family: electronicFont;
+  src: url(../font/DS-DIGIT.TTF);
+}
 body {
   background: url(../images/bg.jpg) no-repeat top center;
   line-height: 1.15;
+}
+body li {
+  list-style: none;
 }
 body header {
   height: 1.25rem;
@@ -111,4 +119,65 @@ body .mainbox .panel .chart {
 body .mainbox .no {
   background: rgba(101, 132, 226, 0.1);
   padding: 0.1875rem;
+}
+body .mainbox .no .no-hd {
+  border: 1px solid rgba(25, 186, 139, 0.17);
+  position: relative;
+}
+body .mainbox .no .no-hd::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 10px;
+  width: 30px;
+  border-left: 2px solid #02a6b5;
+  border-top: 2px solid #02a6b5;
+}
+body .mainbox .no .no-hd::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 10px;
+  width: 30px;
+  border-right: 2px solid #02a6b5;
+  border-bottom: 2px solid #02a6b5;
+}
+body .mainbox .no .no-hd ul {
+  display: flex;
+}
+body .mainbox .no .no-hd ul li {
+  position: relative;
+  flex: 1;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: #ffeb7b;
+  text-align: center;
+  font-family: electronicFont;
+}
+body .mainbox .no .no-hd ul .li1::after {
+  content: "";
+  position: absolute;
+  top: 25%;
+  right: 0;
+  width: 1px;
+  height: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+body .mainbox .no .no-bd ul {
+  display: flex;
+}
+body .mainbox .no .no-bd ul li {
+  flex: 1;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  font-size: 18px;
+  height: 0.5rem;
+  padding-top: 0.1rem;
+  line-height: 0.5rem;
+}
+body .mainbox .map {
+  height: 10.125rem;
+  background-color: pink;
 }
