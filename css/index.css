@@ -114,7 +114,6 @@ body .mainbox .panel h2 {
 }
 body .mainbox .panel .chart {
   height: 3rem;
-  background-color: #fff;
 }
 body .mainbox .no {
   background: rgba(101, 132, 226, 0.1);
