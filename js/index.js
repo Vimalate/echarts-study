@@ -78,7 +78,7 @@
 (function () {
 	// 基于准备好的dom，初始化echarts实例
 	var myChart = echarts.init(document.querySelector(".bar1 .chart"));
-
+	
 	var data = [70, 34, 60, 78, 69];
 	var titlename = ["HTML5", "CSS3", "javascript", "VUE", "NODE"];
 	var valdata = [702, 350, 610, 793, 664];
@@ -187,7 +187,22 @@
 // 折线图
 (function () {
 	var myChart = echarts.init(document.querySelector(".line .chart"));
-
+	var yearData = [
+		{
+			year: '2019',  // 年份
+			data: [  // 两个数组是因为有两条线
+					 [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120],
+					 [40, 64, 191, 324, 290, 330, 310, 213, 180, 200, 180, 79]
+				]
+		},
+		{
+			year: '2020',  // 年份
+			data: [  // 两个数组是因为有两条线
+					 [123, 175, 112, 197, 121, 67, 98, 21, 43, 64, 76, 38],
+			 [143, 131, 165, 123, 178, 21, 82, 64, 43, 60, 19, 34]
+				]
+		}
+	 ];
 	let option = {
 		color: ['#00f2f1', '#ed3f35'],
 		tooltip: {
@@ -239,15 +254,15 @@
 			}
 		},
 		series: [{
-			name:'新增粉丝',
-      data:  [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120],
-      type: 'line',
-      smooth: true
+				name: '新增粉丝',
+				data: [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120],
+				type: 'line',
+				smooth: true
 
 			},
 			{
-				name:'新增游客',
-				data:[40, 64, 191, 324, 290, 330, 310, 213, 180, 200, 180, 79],   
+				name: '新增游客',
+				data: [40, 64, 191, 324, 290, 330, 310, 213, 180, 200, 180, 79],
 				type: 'line',
 				smooth: true,
 			},
@@ -259,4 +274,15 @@
 	window.addEventListener("resize", function () {
 		myChart.resize();
 	});
+
+	// 点击切换
+	$('.line h2').on('click','a',function(){
+		// 更换数据
+		let obj=yearData[$(this).index()]
+		option.series[0].data=obj.data[0]
+		option.series[1].data=obj.data[1]
+		// 重新渲染
+		myChart.setOption(option)
+
+	})
 })()

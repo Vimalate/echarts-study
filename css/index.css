@@ -112,6 +112,11 @@ body .mainbox .panel h2 {
   font-weight: 400;
   text-align: center;
 }
+body .mainbox .panel h2 a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 0.1rem;
+}
 body .mainbox .panel .chart {
   height: 3rem;
 }
